@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400&display=swap");
+
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      #container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        height: 100vh;
+
+        color: #ffffff;
+        background-color: #0c552b;
+
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 300;
+        font-size: 20vh;
+      }
+
+      #container > svg {
+        margin-right: 10vh;
+
+        font-size: 20vh;
+
+        width: 20vh;
+        height: 20vh;
+      }
+
+      div#language_modal_container > div > div > i#close_lang {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
+        padding: 16px;
+
+        color: #ffffff;
+
+        font-size: 32px;
+
+        cursor: pointer;
+      }
+
+      div#language_modal_container > div > div > i#close_lang:hover {
+        color: #4488ff;
+      }
+
+      button#lang {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+
+        width: 64px;
+        height: 64px;
+
+        border: none;
+        border-radius: 50%;
+        outline: none;
+
+        background-color: transparent;
+        color: #ffffff;
+
+        font-size: 32px;
+
+        transition: 100ms;
+
+        cursor: pointer;
+      }
+
+      button#lang:hover {
+        color: #4488ff;
+      }
+
+      div#language_modal_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+
+        background-color: rgba(0, 0, 0, 0.5);
+
+        z-index: -1;
+        opacity: 0;
+
+        overflow: hidden;
+
+        transition: 200ms;
+      }
+
+      div#language_modal_container > div {
+        position: relative;
+
+        width: 480px;
+        height: 320px;
+
+        border-radius: 10px;
+
+        background-color: #111111ee;
+        backdrop-filter: blur(10px);
+
+        overflow: hidden;
+      }
+
+      div#language_modal_container > div > div {
+        width: 100%;
+        height: 100%;
+
+        overflow: auto;
+      }
+
+      div#language_modal_container > div > div > button {
+        padding: 16px 2px;
+        width: 100%;
+
+        border: none;
+
+        background-color: transparent;
+        color: #ffffff;
+
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+
+        transition: 100ms;
+
+        cursor: pointer;
+      }
+
+      div#language_modal_container > div > div > button:hover {
+        background-color: #ffffff22;
+      }
+
+      p#class {
+        position: absolute;
+        bottom: 34px;
+        right: 80px;
+
+        margin: 0;
+        padding: 0;
+
+        color: #ffffff;
+
+        font-family: 'Jakarta Sans', sans-serif;
+        font-weight: 300;
+        font-size: 32px;
+      }
+
+      @media screen and (orientation: portrait) {
+        #container {
+          flex-direction: column;
+        }
+
+        #container svg {
+          margin-right: 0px;
+
+          width: 40vw;
+          height: 40vw;
+        }
+
+        #container p {
+          margin: 0;
+          font-size: 20vw;
+        }
+
+        div#language_modal_container > div {
+          width: calc(100% - 40px);
+          height: calc(100% - 40px);
+        }
+
+        div#language_modal_container > div > div > button {
+          padding: 2vh 0px;
+
+          font-size: 4vh;
+        }
+
+        div#language_modal_container > div > div > i#close_lang {
+          padding: 2vh;
+
+          font-size: 4vh;
+        }
+      }
+    </style>
+
+    <link
+      href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <title id="title">YES</title>
+  </head>
+  <body>
+    <div id="container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.963348 52.963348">
+        <defs>
+         <linearGradient id="c" x1="314.57" x2="332.02" y1="369.98" y2="387.44" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#0f0" offset="0"/>
+          <stop stop-color="#226122" offset="1"/>
+         </linearGradient>
+         <linearGradient id="b" x1="210.25" x2="182.17" y1="229.4" y2="231.97" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#fff" stop-opacity=".72656" offset="0"/>
+          <stop stop-color="#fff" offset="1"/>
+         </linearGradient>
+         <linearGradient id="a" x1="302.74" x2="311.27" y1="377.95" y2="390.78" gradientTransform="matrix(1.9519 0 0 1.8418 -426.22 -488.52)" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#fff" offset="0"/>
+          <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+         </linearGradient>
+        </defs>
+        <g transform="translate(-164.6 -201.82)">
+         <path transform="matrix(1.8961 0 0 1.8961 -426.22 -488.52)" d="m339.54 378.06a13.967 13.967 0 1 1 -27.933 0 13.967 13.967 0 1 1 27.933 0z" fill="#226122"/>
+         <path transform="matrix(1.7312 0 0 1.7312 -372.54 -426.19)" d="m339.54 378.06a13.967 13.967 0 1 1 -27.933 0 13.967 13.967 0 1 1 27.933 0z" fill="url(#c)" stroke="#fff" stroke-width=".32492"/>
+         <path d="m173.97809,230.81101c-.22285.22282-.18093.57323.04188.79604l13.52774,14.18788 22.5326-25.48658c.22285-.22283.22281-.53132 0-.75414l-5.02769-5.02769c-.22284-.22284-.58637-.27716-.79604-.04191l-16.82943,18.88214-7.58343-7.58343c-.22282-.22285-.61512-.22285-.83794,0l-5.02769,5.02769z" fill="url(#b)"/>
+         <path d="m191.07 204.13c-13.347 0-24.175 10.828-24.175 24.175 0 6.4126 2.6169 12.143 6.6955 16.472 2.1188-17.5 16.89-31.107 34.959-31.107 0.48721 0 0.93961 0.09896 1.422 0.1185-4.4214-5.7507-11.092-9.6581-18.901-9.6581z" fill="url(#a)"/>
+        </g>
+       </svg>
+
+      <p id="yes">YES</p>
+    </div>
+
+    <button id="lang">
+      <i class="fal fa-globe"></i>
+    </button>
+
+    <p id="class"></p>
+
+    <div id="language_modal_container">
+      <div>
+        <div>
+          <i class="fal fa-times" id="close_lang"> </i>
+          <button data-lang="ar" class="lang">Arabic</button>
+          <button data-lang="en" class="lang">English</button>
+          <button data-lang="fa" class="lang">Farsi</button>
+          <button data-lang="ku" class="lang">Kurdish</button>
+          <button data-lang="zh" class="lang">Mandarin</button>
+          <button data-lang="es" class="lang">Spanish</button>
+          <button data-lang="tr" class="lang">Turkish</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById("class").innerText = decodeURIComponent(document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("class_code="))
+        .split("=")[1]);
+
+      // Try to detect language from browser
+      const lang = navigator.language || navigator.userLanguage;
+      if (!localStorage.getItem("lang"))
+        localStorage.setItem("lang", lang.split("-")[0]);
+
+      // Select language
+      document.getElementById("lang").onclick = () => {
+        document.getElementById("language_modal_container").style.opacity = 1;
+        document.getElementById("language_modal_container").style.zIndex = 1;
+      };
+
+      // Close language modal
+      document.getElementById("close_lang").onclick = () => {
+        document.getElementById("language_modal_container").style.opacity = 0;
+        document.getElementById("language_modal_container").style.zIndex = -1;
+      };
+
+      // Change language
+      document.querySelectorAll(".lang").forEach((lang) => {
+        lang.onclick = (e) => {
+          document.getElementById("language_modal_container").style.opacity = 0;
+          document.getElementById("language_modal_container").style.zIndex = -1;
+
+          const lang = e.target.getAttribute("data-lang");
+          localStorage.setItem("lang", lang);
+
+          window.location.reload();
+        };
+      });
+
+      const YES_TEXT = {
+        ar: "نعم",
+        en: "YES",
+        fa: "بله",
+        ku: "بەڵێ",
+        zh: "是",
+        es: "SÍ",
+        tr: "EVET",
+      };
+
+      document.getElementById("yes").innerHTML =
+        YES_TEXT[localStorage.getItem("lang") || "en"] || "YES";
+
+      document.getElementById("title").innerHTML =
+        YES_TEXT[localStorage.getItem("lang") || "en"] || "YES";
+    </script>
+  </body>
+</html>

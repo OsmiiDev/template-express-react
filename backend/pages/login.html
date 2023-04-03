@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400&display=swap");
+    
+        body {
+            margin: 0px;
+            padding: 0px;
+
+            background-color: #111111;
+            color: #ffffff;
+        }
+
+        input {
+            display: block;
+
+            margin: 0px;
+            margin-left: 5vh;
+            margin-top: 5vh;
+            padding: 1.5vh 2.5vh;
+            
+            border: none;
+            border-radius: 4px;
+            outline: none;
+
+            background-color: #222222;
+            color: #ffffff;
+
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-weight: 300;
+            font-size: 2.5vh;
+
+            transition: 300ms;
+        }
+
+        input:focus {
+            border: none;
+            outline: none;
+        }
+
+        button {
+            margin: 0px;
+            margin-left: 5vh;
+            margin-top: 10px;
+            padding: 1.5vh 2.5vh;
+
+            border: none;
+            border-radius: 4px;
+
+            background-color: #222222;
+            color: #ffffff;
+
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-weight: 300;
+            font-size: 2.5vh;
+
+            cursor: pointer;
+
+            transition: 300ms;
+        }
+
+        @media screen and (orientation: portrait) {
+            input {
+                margin-left: 5vw;
+                margin-top: 5vw;
+                padding: 2vw 3vw;
+
+                font-size: 6vw;
+            }
+
+            button {
+                margin-left: 5vw;
+                padding: 2vw 3vw;
+                
+                font-size: 6vw;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <input placeholder="Class" id = "classCode"> </input>
+    <button id = "student"> Login as Student </button>
+    <input placeholder="Username" id = "user"> </input>
+    <input placeholder="Password" id = "pw" style="margin-top: 10px;"> </input>
+    <button id = "submit"> Login as Admin </button>
+
+    <script>
+        if(window.location.hash === "#invalid") document.getElementById("classCode").style.backgroundColor = "#751b0c44";
+        else document.getElementById("classCode").style.backgroundColor = "#222222";
+
+        document.getElementById("student").addEventListener("click", function() {
+            window.location.href = `/student?classCode=${document.getElementById("classCode").value}`;
+        });
+
+        document.getElementById("submit").addEventListener("click", function() {
+            var user = document.getElementById("user").value;
+            var pw = document.getElementById("pw").value;
+            
+            // Send a POST request to the server with the username and password
+            fetch(`/login`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    username: user,
+                    password: pw
+                })
+            }).then((response) => {
+                response.text().then((s) => {
+                    if (s === "true") window.location.href = '/admin';
+                    else alert("Incorrect username or password")
+                })
+            })
+        });
+    </script>
+  </body>
+</html>
